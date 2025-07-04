@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagamento Pix</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f8f8f8;
+      padding: 40px;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    img {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #388e3c;
+    }
+    .desc {
+      margin-bottom: 25px;
+      font-size: 18px;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Acesse as <strong>Chaves da Transformação</strong></h2>
+    <p class="desc">Escaneie o QR Code ou copie o código Pix abaixo para pagar <strong>R$7,39</strong></p>
+    <img src="qrcode_pix_cainan.png" alt="QR Code Pix">
+    <br>
+    <button onclick="copyPixCode()">📋 Copiar código Pix</button>
+    <p id="copied" style="display:none; color: green; margin-top: 10px;">Código copiado!</p>
+    <div class="footer">Cainan Leão Lantiê Dias</div>
+  </div>
+
+  <script>
+    function copyPixCode() {
+      const pixCode = `00020126330014BR.GOV.BCB.PIX01118629848154052040000530398654047.395802BR5923Cainan Leao Lantie Dias6008Salvador621805140002012662001463047DFC`;
+      navigator.clipboard.writeText(pixCode).then(() => {
+        document.getElementById("copied").style.display = "block";
+      });
+    }
+  </script>
+</body>
+</html>
